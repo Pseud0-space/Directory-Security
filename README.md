@@ -14,7 +14,7 @@ after --dir give the path to the directory where you create a directory called '
 * Now Encrypt or Decrypt [Program will decide that, depending on if the folder is encrypted or decrypted] Enjoy!
 
 ## Disclaimer
-I won't be responsible if you are unable to decrypt the data back, so USE IT AT YOUR RISK.
+I won't be responsible if you are unable to decrypt the data back, so USE IT AT YOUR OWN RISK.
 
 # SecMan
 This program is used for updating your password
