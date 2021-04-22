@@ -72,21 +72,25 @@ def dir_enc(DR):
     listFiles = os.listdir(DIR)
 
     for file in listFiles:
-        if os.path.isfile(f"{DIR}{file}"):
-            fl = open(f"{DIR}{file}", "r")
-            data = fl.read()
-            fl.close()
-
-            ext = file.split(".")[1]
-
-            if data != "":
-                fl = open(f"{DIR}{file.split('.')[0]}.encrypted", "w")
-                fl.write(encrypt(f"EXTENSION:{ext}\n\n{data}"))
+        try:
+            if os.path.isfile(f"{DIR}{file}"):
+                fl = open(f"{DIR}{file}", "r")
+                data = fl.read()
                 fl.close()
-                os.remove(f"{DIR}{file}")
-            
-        elif os.path.isdir(f"{DIR}{file}"):
-            dir_enc(f"{DIR}{file}/")
+
+                ext = file.split(".")[1]
+
+                if data != "":
+                    fl = open(f"{DIR}{file.split('.')[0]}.encrypted", "w")
+                    fl.write(encrypt(f"EXTENSION:{ext}\n\n{data}"))
+                    fl.close()
+                    os.remove(f"{DIR}{file}")
+                
+            elif os.path.isdir(f"{DIR}{file}"):
+                dir_enc(f"{DIR}{file}/")
+        
+        except Exception:
+            continue
             
 
 def dir_dec(DR):
@@ -127,7 +131,7 @@ if os.path.exists(f"{F_PATH}Locker"):
     hashed = hashlib.sha256(input("\n[*] Please Enter your password to continue >> ").encode()).hexdigest()
 
     if hashed == PasHash:
-        
+
         if State == "UNSAFE":
             conf = input("[*] Your Data is not safe, press 'y' to encrypt data >> ")
 
