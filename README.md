@@ -2,7 +2,6 @@
 A python program to keep your files safe and secured
 # DirSec
 
-#run
 ### Windows
 python DirSec.py --dir "path/to/directory"
 ### Linux
@@ -18,7 +17,7 @@ I won't be responsible if you are unable to decrypt the data back, so USE IT AT 
 
 # SecMan
 This program is used for updating your password
-#run
+
 ### Windows
 python DirMan.py --dir "path/to/directory/and/SecOps.json/file"
 ### Linux
