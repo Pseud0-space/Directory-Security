@@ -42,13 +42,13 @@ except Exception:
     sys.exit()
 
 iv = b'\xc62\xb3\x8d\x94z(\xb2\xbc\x13^\x18\r.\x92\xa7'
+backend = default_backend()
 key = b''
 
 def padding(data):
         while len(data) % 16 != 0:
             data = data + " "
         return data
-backend = default_backend()
 
 def decrypt(inp):
     paa = inp.encode()
