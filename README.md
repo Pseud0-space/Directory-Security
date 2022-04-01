@@ -1,5 +1,5 @@
 # Directory-Security
-##Deprecated##
+## Deprecated
 A python program to keep your files safe and secured
 # DirSec
 
